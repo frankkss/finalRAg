@@ -1,0 +1,14 @@
+[server]
+enableCORS = false
+port = 8501
+
+[theme]
+primaryColor = "#007BFF"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F0F2F6"
+textColor = "#262730"
+font = "sans serif"
+
+[browser]
+serverAddress = "localhost"
+serverPort = 8501

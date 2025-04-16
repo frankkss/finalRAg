@@ -1,0 +1,3 @@
+[entrypoint]
+# The file that Streamlit will execute as main
+entrypoint = "app.py"
