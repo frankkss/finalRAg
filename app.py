@@ -57,10 +57,9 @@ def create_corpus_from_uploaded_files(uploaded_files):
     return corpus
 
 # App header
-st.title("📚 Thesis Library Assistant")
+st.title("📚 CSPC Thesis Library Assistant")
 st.markdown("""
-This assistant helps you find relevant information in thesis papers and research documents.
-Upload PDF files or use the existing ones in the directory.
+This assistant helps you find relevant information in thesis papers and research documents in CSPC library.
 """)
 
 # Sidebar for uploading files and selecting data source
@@ -163,4 +162,4 @@ if user_query:
 
 # Add footer
 st.markdown("---")
-st.caption("Thesis Library Assistant - Helping you find the right research papers for your needs")
+st.caption(" CSPC Thesis Library Assistant - Helping you find the right research papers for your needs")
