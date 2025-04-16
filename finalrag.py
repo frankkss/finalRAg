@@ -82,16 +82,6 @@ def summarize_text(text, max_length=200):
         
     return summary
 
-# Create the corpus from PDF files
-pdf_corpus = create_pdf_corpus()
-
-# Display summary information about the processed PDFs
-print(f"\nProcessed {len(pdf_corpus)} PDF documents:")
-for i, doc in enumerate(pdf_corpus, start=1):
-    print(f"{i}. {doc['title']}")
-    print(f"   Summary: {doc['summary']}")
-    print()
-
 # Initialize the OpenAI client
 client = openai.OpenAI(
     api_key="fAaHJwAYLY_D6HzVyTJ2Hr7Ve8KjKg1WT5sV5oFxGBA",
@@ -161,11 +151,23 @@ def generate_pdf_rag_response(user_query, pdf_corpus):
     
     return response.choices[0].message.content
 
-user_input = input("Please enter your research topic or question: ")
+# This code only runs when the script is executed directly, not when imported
+if __name__ == "__main__":
+    # Create the corpus from PDF files
+    pdf_corpus = create_pdf_corpus()
 
-# Get response from the PDF RAG system
-pdf_response = generate_pdf_rag_response(user_input, pdf_corpus)
+    # Display summary information about the processed PDFs
+    print(f"\nProcessed {len(pdf_corpus)} PDF documents:")
+    for i, doc in enumerate(pdf_corpus, start=1):
+        print(f"{i}. {doc['title']}")
+        print(f"   Summary: {doc['summary']}")
+        print()
 
-# Display the LLM's response
-print("\nGenerated response based on PDF documents:")
-print(pdf_response)
+    user_input = input("Please enter your research topic or question: ")
+
+    # Get response from the PDF RAG system
+    pdf_response = generate_pdf_rag_response(user_input, pdf_corpus)
+
+    # Display the LLM's response
+    print("\nGenerated response based on PDF documents:")
+    print(pdf_response)
